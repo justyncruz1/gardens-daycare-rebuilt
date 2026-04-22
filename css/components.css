@@ -1835,3 +1835,41 @@
   }
   .g-a { grid-column: 1 / -1; grid-row: span 2; }
 }
+
+/* ---------------------------------------------------------
+   PROGRAM CARDS — mobile fix
+   Decorative ::after circle was obscuring last <li> on phones.
+--------------------------------------------------------- */
+@media (max-width: 920px) {
+  .prog::after {
+    width: 150px;
+    height: 150px;
+    right: -48px;
+    bottom: -48px;
+  }
+}
+@media (max-width: 768px) {
+  .prog {
+    padding: 26px 22px 32px;
+  }
+  .prog::after {
+    width: 120px;
+    height: 120px;
+    right: -36px;
+    bottom: -36px;
+    opacity: 0.55;
+  }
+  /* Defensive: make sure text content paints above the decorative circle */
+  .prog > * {
+    position: relative;
+    z-index: 1;
+  }
+  /* Keep full 4-item pre-K list breathing */
+  .prog ul {
+    gap: 10px;
+  }
+  .prog li {
+    font-size: 0.92rem;
+    line-height: 1.45;
+  }
+}
