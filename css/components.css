@@ -1873,3 +1873,21 @@
     line-height: 1.45;
   }
 }
+
+/* ---------------------------------------------------------
+   WAVE DIVIDERS — mobile height fix
+   Desktop waves are 84px tall and are absolutely-positioned
+   to stick into adjacent sections by ~82px. On mobile the
+   section padding-block is only ~48px — so the wave was
+   bleeding into card content (Pre-Schoolers card clipping).
+   Shrink waves on mobile so they always fit within the
+   section's bottom padding.
+--------------------------------------------------------- */
+@media (max-width: 768px) {
+  .wave {
+    height: 44px;
+  }
+  .site-footer .wave-top {
+    height: 44px;
+  }
+}
